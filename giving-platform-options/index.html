@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Giving Platform Options</title>
+<style>*,*::before,*::after{box-sizing:border-box}html{color-scheme:light}body{margin:0;-webkit-text-size-adjust:100%}img{max-width:100%}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,600;1,8..60,500&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: one centered column; the matrix scrolls sideways inside its own frame, first column pinned. */
+:root {
+  --bg: #F5F7F5; --surface: #FFFFFF; --fg: #1B2320; --muted: #5E6A64; --line: #D7DDD8;
+  --accent: #0F6E56; --star-off: #CBD3CE; --best: #E4F1EA; --best-line: #A9D3C1;
+  --display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --body: "Source Sans 3", "Helvetica Neue", Arial, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101512; --surface: #171E1A; --fg: #E6EBE7; --muted: #99A49E; --line: #2A342E;
+    --accent: #5CC89F; --star-off: #38423C; --best: #1B2E26; --best-line: #2F5A48; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101512; --surface: #171E1A; --fg: #E6EBE7; --muted: #99A49E; --line: #2A342E;
+  --accent: #5CC89F; --star-off: #38423C; --best: #1B2E26; --best-line: #2F5A48; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.45; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 40px 56px; padding-inline: 16px; }
+header { max-width: 62ch; margin-bottom: 28px; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(28px, 4vw, 38px); line-height: 1.1; margin: 6px 0 12px; text-wrap: balance; }
+header p { margin: 0; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 0 0 14px; padding: 0; list-style: none; font-size: 14px; color: var(--muted); }
+.legend li { display: flex; align-items: center; gap: 8px; }
+.swatch { display: inline-block; width: 18px; height: 14px; border-radius: 3px; background: var(--best); border: 1px solid var(--best-line); }
+.frame { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 860px; font-variant-numeric: tabular-nums; }
+th, td { padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
+thead th { position: sticky; top: 0; background: var(--surface); border-bottom: 2px solid var(--fg); vertical-align: bottom; padding-top: 16px; }
+thead th:first-child { z-index: 3; }
+.opt { display: block; font-weight: 700; font-size: 17px; line-height: 1.2; }
+.sub { display: block; font-weight: 400; font-size: 13px; color: var(--muted); margin-top: 3px; line-height: 1.3; }
+tbody th { font-weight: 600; width: 250px; min-width: 220px; position: sticky; left: 0; background: var(--surface); z-index: 2; box-shadow: 1px 0 0 var(--line); }
+tr.grp th { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); background: var(--bg); padding: 14px 14px 8px; width: auto; min-width: 0; box-shadow: none; position: static; }
+tbody tr:last-child td, tbody tr:last-child th { border-bottom: 0; }
+td.best { background: var(--best); box-shadow: inset 3px 0 0 var(--accent); }
+.stars { font-size: 18px; letter-spacing: 1px; line-height: 1; white-space: nowrap; }
+.stars .on { color: var(--accent); }
+.stars .off { color: var(--star-off); }
+.rng { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.to { font-size: 13px; color: var(--muted); }
+.note { display: block; font-size: 13px; color: var(--muted); margin-top: 3px; }
+td.txt { color: var(--muted); font-size: 14px; }
+footer { margin-top: 18px; font-size: 13px; color: var(--muted); max-width: 72ch; }
+@media (max-width: 600px) {
+  tbody th { width: 170px; min-width: 150px; font-size: 14px; }
+  th, td { padding: 10px 11px; }
+  .stars { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Comparison matrix · October 2026</div>
+    <h1>Giving platform options</h1>
+    <p>Four ways to run recurring giving, donor records and outreach across The 1996, the Housing Corporation and the Alumni Association, rated on seventeen criteria.</p>
+  </header>
+  <ul class="legend">
+    <li><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span> More stars is better in every row. In the two burden rows, five stars means the least burden.</li>
+    <li><span class="swatch"></span> Strongest option in that row, as marked in the source.</li>
+  </ul>
+  <div class="frame">
+    <table>
+      <thead><tr><th scope="col"><span class="sub">Criterion</span></th><th scope="col"><span class="opt">Owned Core</span><span class="sub">The 1996 + Stripe/Link + Frost + optional Pennington</span></th><th scope="col"><span class="opt">Givebutter</span><span class="sub">+ The 1996 integration</span></th><th scope="col"><span class="opt">Current Pennington</span><span class="sub">+ Salesforce + OmegaFi</span></th><th scope="col"><span class="opt">Frost ACH Direct</span></th></tr></thead>
+      <tbody>
+        <tr class="grp"><th colspan="5" scope="colgroup">Giving and fundraising</th></tr><tr><th scope="row">Immediate recurring giving</th><td class=""><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span></td><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span></td></tr><tr><th scope="row">Turnkey donor CRM today</th><td class=""><span class="stars" role="img" aria-label="3 out of 5"><span class="on">★★★</span><span class="off">★★</span></span></td><td class=""><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span></td><td class=""><span class="stars" role="img" aria-label="1 out of 5"><span class="on">★</span><span class="off">★★★★</span></span></td></tr><tr><th scope="row">Fundraising campaigns</th><td class=""><span class="stars" role="img" aria-label="3 out of 5"><span class="on">★★★</span><span class="off">★★</span></span><span class="note">initially</span></td><td class=""><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span></td><td class=""><span class="stars" role="img" aria-label="1 out of 5"><span class="on">★</span><span class="off">★★★★</span></span></td></tr><tr><th scope="row">Professional outreach</th><td class=""><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span><span class="note">if Pennington retained</span></td><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span></td><td class=""><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="1 out of 5"><span class="on">★</span><span class="off">★★★★</span></span></td></tr><tr class="grp"><th colspan="5" scope="colgroup">Ownership and control</th></tr><tr><th scope="row">Data ownership / control</th><td class="best"><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span></td><td class=""><span class="stars" role="img" aria-label="2 out of 5"><span class="on">★★</span><span class="off">★★★</span></span><span class="note">operationally</span></td><td class=""><span class="stars" role="img" aria-label="3 out of 5"><span class="on">★★★</span><span class="off">★★</span></span></td></tr><tr><th scope="row">Raw database access</th><td class="best"><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span><span class="note">via API / export</span></td><td class=""><span class="stars" role="img" aria-label="2 out of 5"><span class="on">★★</span><span class="off">★★★</span></span></td><td class="txt ">N/A</td></tr><tr><th scope="row">Payment credential portability</th><td class="best"><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="3 out of 5"><span class="on">★★★</span><span class="off">★★</span></span></td><td class=""><span class="rng"><span class="stars" role="img" aria-label="2 out of 5"><span class="on">★★</span><span class="off">★★★</span></span><span class="to">to</span><span class="stars" role="img" aria-label="3 out of 5"><span class="on">★★★</span><span class="off">★★</span></span></span></td><td class=""><span class="stars" role="img" aria-label="2 out of 5"><span class="on">★★</span><span class="off">★★★</span></span></td></tr><tr><th scope="row">Security potential</th><td class="best"><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span></td><td class=""><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span><span class="note">banking / low CRM</span></td></tr><tr><th scope="row">Board succession</th><td class=""><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span></td><td class=""><span class="stars" role="img" aria-label="3 out of 5"><span class="on">★★★</span><span class="off">★★</span></span></td></tr><tr class="grp"><th colspan="5" scope="colgroup">Fit with The 1996 and the organizations</th></tr><tr><th scope="row">The 1996 integration</th><td class="best"><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span></td><td class=""><span class="stars" role="img" aria-label="2 out of 5"><span class="on">★★</span><span class="off">★★★</span></span></td><td class=""><span class="stars" role="img" aria-label="2 out of 5"><span class="on">★★</span><span class="off">★★★</span></span></td></tr><tr><th scope="row">Big/Little + household data</th><td class="best"><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span><span class="note">native</span></td><td class="txt ">Must duplicate / sync</td><td class="txt ">Must duplicate / sync</td><td class="txt ">None</td></tr><tr><th scope="row">Housing Corp + Alumni Assoc.</th><td class="best"><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="3 out of 5"><span class="on">★★★</span><span class="off">★★</span></span></td><td class=""><span class="stars" role="img" aria-label="3 out of 5"><span class="on">★★★</span><span class="off">★★</span></span></td><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span><span class="note">banking only</span></td></tr><tr><th scope="row">Vendor independence</th><td class="best"><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="3 out of 5"><span class="on">★★★</span><span class="off">★★</span></span></td><td class=""><span class="stars" role="img" aria-label="2 out of 5"><span class="on">★★</span><span class="off">★★★</span></span></td><td class=""><span class="stars" role="img" aria-label="3 out of 5"><span class="on">★★★</span><span class="off">★★</span></span></td></tr><tr class="grp"><th colspan="5" scope="colgroup">Effort</th></tr><tr><th scope="row">Build burden</th><td class=""><span class="stars" role="img" aria-label="2 out of 5"><span class="on">★★</span><span class="off">★★★</span></span></td><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span></td><td class="best"><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span></td></tr><tr><th scope="row">Admin burden after implementation</th><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span></td><td class="best"><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="3 out of 5"><span class="on">★★★</span><span class="off">★★</span></span></td></tr><tr class="grp"><th colspan="5" scope="colgroup">Future flexibility</th></tr><tr><th scope="row">Ability to change processors later</th><td class="best"><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span></td><td class=""><span class="stars" role="img" aria-label="2 out of 5"><span class="on">★★</span><span class="off">★★★</span></span></td><td class=""><span class="stars" role="img" aria-label="2 out of 5"><span class="on">★★</span><span class="off">★★★</span></span></td></tr><tr><th scope="row">Long-term strategic flexibility</th><td class="best"><span class="stars" role="img" aria-label="5 out of 5"><span class="on">★★★★★</span><span class="off"></span></span></td><td class=""><span class="stars" role="img" aria-label="4 out of 5"><span class="on">★★★★</span><span class="off">★</span></span></td><td class=""><span class="stars" role="img" aria-label="2 out of 5"><span class="on">★★</span><span class="off">★★★</span></span></td><td class=""><span class="stars" role="img" aria-label="2 out of 5"><span class="on">★★</span><span class="off">★★★</span></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <footer>Scroll the table sideways on a phone. The criterion column stays pinned.</footer>
+</div>
+
+</body>
+</html>
